@@ -1,4 +1,5 @@
 from selenium import webdriver
+from pyvirtualdisplay import Display
 import asyncio
 import json
 from models.cache import ListCache
@@ -33,6 +34,8 @@ class LiverPoolNewProdsScraper:
         self.loop.run_until_complete(self.main())
 
     async def main(self):
+        display = Display(visible=0, size=(800, 800))  
+        display.start()
         self.driver = webdriver.Chrome(
             executable_path=self.webdriver_path, options=self.options)
         self.driver.implicitly_wait(10)
