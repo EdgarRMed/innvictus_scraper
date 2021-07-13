@@ -8,3 +8,4 @@ logs/*
 Cache/*
 db
 chromedriver
+/venv
